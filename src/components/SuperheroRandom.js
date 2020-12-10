@@ -50,6 +50,9 @@ function SuperheroRandom() {
     setChoice(e.target.value)
   }
 
+  const playerWinningScore = score > 4
+  const computerWinningScore = compScore > 4
+
 
   return (
 
@@ -68,7 +71,9 @@ function SuperheroRandom() {
               <h1>Superhero Showdown</h1>
               <div className="scores">
                 <h3>Player Score: {score}</h3>
+                {playerWinningScore && <h2>🦸‍♂️ Congratulations, you win! 🦸‍♀️</h2>}
                 <h3>Computer Score: {compScore}</h3>
+                {computerWinningScore && <h2>🦹‍♀️ You lost! 🦹‍♂️</h2> }
               </div>
               <div className="container">
                 <div className="player-superhero">
@@ -92,7 +97,7 @@ function SuperheroRandom() {
                   <button value="combat">Combat: {choice ? `${randomComputerPlayer.powerstats.combat}` : '' }</button>
                 </div> 
               </div>
-              <button onClick={pickSupers} disabled={!choice} className="next-button">Next Round</button>
+              <button onClick={pickSupers} disabled={!choice, playerWinningScore, computerWinningScore} className="next-button">Next Round</button>
             </section>
           }
         </div>
