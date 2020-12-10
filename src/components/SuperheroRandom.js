@@ -13,6 +13,7 @@ function SuperheroRandom() {
   const [choice, setChoice] = React.useState('')
 
   const [score, setScore] = React.useState(0)
+  const [compScore, setCompScore] = React.useState(0)
   
   const [randomPlayerSuper, setRandomPlayerSuper] = React.useState(null)
   const [randomComputerPlayer, setRandomComputerSuper] = React.useState(null)
@@ -43,7 +44,9 @@ function SuperheroRandom() {
     const playerHasWon = playerScore > computerScore 
     if (playerHasWon) {
       setScore(score + 1)
-    } 
+    } else {
+      setCompScore(compScore + 1)
+    }
     console.log(playerHasWon)
     setChoice(e.target.value)
   }
@@ -54,34 +57,39 @@ function SuperheroRandom() {
     <section className="superhero-v-superhero">
       {/* <img src={img} alt="Superheroes Image" /> */}
       <div className="section">
-        <h3>{score}</h3>
         <div>
           {(!randomPlayerSuper) ?
-            <button onClick={pickSupers}>Start Game</button>
+            <button className="start-game" onClick={pickSupers}>Start Game</button>
             :
-            <div className="container">
-              <div className="player-superhero">
-                <h2>{ randomPlayerSuper.name }</h2>
-                <img src={randomPlayerSuper.images.sm} alt={randomPlayerSuper.name} />
-                <button onClick={playGame} value='intelligence' >Intelligence: { randomPlayerSuper.powerstats.intelligence}</button>
-                <button onClick={playGame} value='strength' >Strength: { randomPlayerSuper.powerstats.strength}</button>
-                <button onClick={playGame} value='speed'>Speed: { randomPlayerSuper.powerstats.speed}</button>
-                <button onClick={playGame} value='durability'>Durability: { randomPlayerSuper.powerstats.durability}</button>
-                <button onClick={playGame} value='power'>Power: { randomPlayerSuper.powerstats.power}</button>
-                <button onClick={playGame} value='combat'>Combat: { randomPlayerSuper.powerstats.combat}</button>
+            <section className="game-area">
+              <div className="scores">
+                <h3>Player Score: {score}</h3>
+                <h3>Computer Score: {compScore}</h3>
               </div>
-              <div className="computer-superhero">
-                <h2>{ randomComputerPlayer.name }</h2>
-                <img src={randomComputerPlayer.images.sm} alt={randomComputerPlayer.name} />
-                <button value="intelligence">Intelligence: {choice ? `${randomComputerPlayer.powerstats.intelligence}` : '' }</button>
-                <button value="strength">Strength: {choice ? `${randomComputerPlayer.powerstats.strength}` : '' }</button>
-                <button value="speed">Speed: {choice ? `${randomComputerPlayer.powerstats.speed}` : '' }</button>
-                <button value="durability">Durability: {choice ? `${randomComputerPlayer.powerstats.durability}` : '' }</button>
-                <button value="power">Power: {choice ? `${randomComputerPlayer.powerstats.power}` : '' }</button>
-                <button value="combat">Combat: {choice ? `${randomComputerPlayer.powerstats.combat}` : '' }</button>
-              </div> 
-              <button onClick={pickSupers} disabled={!choice}>Next Round</button>
-            </div>
+              <div className="container">
+                <div className="player-superhero">
+                  <h2>{ randomPlayerSuper.name }</h2>
+                  <img src={randomPlayerSuper.images.sm} alt={randomPlayerSuper.name} />
+                  <button onClick={playGame} value='intelligence' disabled={choice}>Intelligence: { randomPlayerSuper.powerstats.intelligence}</button>
+                  <button onClick={playGame} value='strength' disabled={choice}>Strength: { randomPlayerSuper.powerstats.strength}</button>
+                  <button onClick={playGame} value='speed' disabled={choice}>Speed: { randomPlayerSuper.powerstats.speed}</button>
+                  <button onClick={playGame} value='durability' disabled={choice}>Durability: { randomPlayerSuper.powerstats.durability}</button>
+                  <button onClick={playGame} value='power' disabled={choice}>Power: { randomPlayerSuper.powerstats.power}</button>
+                  <button onClick={playGame} value='combat' disabled={choice}>Combat: { randomPlayerSuper.powerstats.combat}</button>
+                </div>
+                <div className="computer-superhero">
+                  <h2>{ randomComputerPlayer.name }</h2>
+                  <img src={randomComputerPlayer.images.sm} alt={randomComputerPlayer.name} />
+                  <button value="intelligence">Intelligence: {choice ? `${randomComputerPlayer.powerstats.intelligence}` : '' }</button>
+                  <button value="strength">Strength: {choice ? `${randomComputerPlayer.powerstats.strength}` : '' }</button>
+                  <button value="speed">Speed: {choice ? `${randomComputerPlayer.powerstats.speed}` : '' }</button>
+                  <button value="durability">Durability: {choice ? `${randomComputerPlayer.powerstats.durability}` : '' }</button>
+                  <button value="power">Power: {choice ? `${randomComputerPlayer.powerstats.power}` : '' }</button>
+                  <button value="combat">Combat: {choice ? `${randomComputerPlayer.powerstats.combat}` : '' }</button>
+                </div> 
+              </div>
+              <button onClick={pickSupers} disabled={!choice} className="next-button">Next Round</button>
+            </section>
           }
         </div>
       </div>
