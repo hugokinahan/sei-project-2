@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 100px;
+}
+
+.player-superhero {
+  border: 1px solid black;
+  width: 200px;
+  padding: 20px;
+}
+
+.computer-superhero {
+  border: 1px solid black;
+  width: 200px;
+  padding: 20px;
+}

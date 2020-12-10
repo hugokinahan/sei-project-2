@@ -3,7 +3,6 @@ import axios from 'axios'
 
 function SuperheroesAll() {
 
-
   const [superheroes, setSuperheroes] = React.useState(null)
 
   React.useEffect(() => {

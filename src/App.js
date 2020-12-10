@@ -1,12 +1,15 @@
 import React from 'react'
 
-import SuperheroesAll from './components/SuperheroesAll'
+
+// import SuperheroesAll from './components/SuperheroesAll'
+import SuperheroRandom from './components/SuperheroRandom'
+
 
 function App() {
 
-
   return (
-    <SuperheroesAll />
+    // <SuperheroesAll />
+    <SuperheroRandom />
   )
 }
 
