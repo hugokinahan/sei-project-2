@@ -46,8 +46,7 @@ function SuperheroRandom() {
       setScore(score + 1)
     } else {
       setCompScore(compScore + 1)
-    }
-    console.log(playerHasWon)
+    } 
     setChoice(e.target.value)
   }
 
@@ -59,9 +58,14 @@ function SuperheroRandom() {
       <div className="section">
         <div>
           {(!randomPlayerSuper) ?
-            <button className="start-game" onClick={pickSupers}>Start Game</button>
+            <div className="start-features">
+              <h1>Superhero Showdown</h1>
+              <h4>Instructions here</h4>
+              <button className="start-game" onClick={pickSupers}>Start Game</button>
+            </div>
             :
             <section className="game-area">
+              <h1>Superhero Showdown</h1>
               <div className="scores">
                 <h3>Player Score: {score}</h3>
                 <h3>Computer Score: {compScore}</h3>

@@ -1,15 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
 * {
   box-sizing: border-box;
   font-family: avenir;
+}
+
+h1 {
+  font-family: 'Bungee', cursive;
+  font-size: 50px;
+  text-align: center;
 }
 
 // .superhero-v-superhero {
 //   background-image: url('https://news.iium.edu.my/wp-content/uploads/2019/10/marvel_superheroes.jpg')
 // }
 
+.start-features {
+  text-align: center;
+}
+
 .start-game {
   margin: 0 auto;
-  margin-top: 30%;
+  margin-top: 10%;
   text-align: center;
   padding: 20px;
   font-size: 25px;
