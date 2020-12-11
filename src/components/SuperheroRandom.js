@@ -37,6 +37,9 @@ function SuperheroRandom() {
     getData()
   }, [])
 
+  const reloadPage = () => {
+    window.location.reload()
+  }
 
   const playGame = e => {
     const playerScore =  randomPlayerSuper.powerstats[e.target.value]
@@ -63,7 +66,14 @@ function SuperheroRandom() {
           {(!randomPlayerSuper) ?
             <div className="start-features">
               <h1>Superhero Showdown</h1>
-              <h4>Instructions here</h4>
+              <h4 className="instructions">Superhero Showdown is a race to 5 points. 
+                <br/>
+                <br/>
+                Each round you will be given a random superhero and you must click on the attribute you believe will have a higher score than the equivalent attribute of the computer&apos;s superhero. 
+                <br/>
+                Each correct answer will score you 1 point. 
+                <br/>
+                Why be a hero when you can be a superhero?</h4>
               <button className="start-game" onClick={pickSupers}>Start Game</button>
             </div>
             :
@@ -71,9 +81,9 @@ function SuperheroRandom() {
               <h1>Superhero Showdown</h1>
               <div className="scores">
                 <h3>Player Score: {score}</h3>
-                {playerWinningScore && <h2>🦸‍♂️ Congratulations, you win! 🦸‍♀️</h2>}
+                {playerWinningScore && <h2>🦸‍♂️ Congratulations, you win! You won in the arena now go and prove your powers 🦸‍♀️</h2>}
+                {computerWinningScore && <h2>🦹‍♀️ You lost! Time to hang up your cape... 🦹‍♂️</h2> }
                 <h3>Computer Score: {compScore}</h3>
-                {computerWinningScore && <h2>🦹‍♀️ You lost! 🦹‍♂️</h2> }
               </div>
               <div className="container">
                 <div className="player-superhero">
@@ -97,7 +107,8 @@ function SuperheroRandom() {
                   <button value="combat">Combat: {choice ? `${randomComputerPlayer.powerstats.combat}` : '' }</button>
                 </div> 
               </div>
-              <button onClick={pickSupers} disabled={!choice, playerWinningScore, computerWinningScore} className="next-button">Next Round</button>
+              <button onClick={pickSupers} disabled={!choice || playerWinningScore || computerWinningScore} className="next-button">Next Round</button>
+              <button onClick={reloadPage} className="restart-button">Restart Game</button>
             </section>
           }
         </div>
