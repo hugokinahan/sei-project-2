@@ -1,7 +1,5 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) GA London React Template
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) sei-project-2: Build a React Application that consumes a public API
 
-
-sei-project-2: Build a React Application that consumes a public API
 
 # Brief
 
