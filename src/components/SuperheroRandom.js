@@ -1,10 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import axios from 'axios'
-// import { useParams } from 'react-router-dom'
-// import { getRandomSuper } from '../lib/api'
-
-import img from '/Users/hugokinahan/development/PROJECTS/project-2/src/assets/marvel_superheroes.jpg'
 
 function SuperheroRandom() {
   
@@ -60,7 +56,6 @@ function SuperheroRandom() {
   return (
 
     <section className="superhero-v-superhero">
-      {/* <img src={img} alt="Superheroes Image" /> */}
       <div className="section">
         <div>
           {(!randomPlayerSuper) ?
