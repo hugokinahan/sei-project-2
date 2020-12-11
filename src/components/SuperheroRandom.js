@@ -81,7 +81,7 @@ function SuperheroRandom() {
               <h1>Superhero Showdown</h1>
               <div className="scores">
                 <h3>Player Score: {score}</h3>
-                {playerWinningScore && <h2>🦸‍♂️ Congratulations, you win! You won in the arena now go and prove your powers 🦸‍♀️</h2>}
+                {playerWinningScore && <h2>🦸‍♂️ You win! You won in the arena now go and prove your powers 🦸‍♀️</h2>}
                 {computerWinningScore && <h2>🦹‍♀️ You lost! Time to hang up your cape... 🦹‍♂️</h2> }
                 <h3>Computer Score: {compScore}</h3>
               </div>
