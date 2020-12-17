@@ -5,7 +5,7 @@
 
 # Deployment
 
-- Please follow the link to play my game: 
+- Please follow the link to play my game: https://superhero-showdown-hugokinahan.netlify.app/
 
 # Motivation
 
