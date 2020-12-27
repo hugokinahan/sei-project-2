@@ -85,9 +85,33 @@ To get pass this we had to ensure that the value of the of the powerstats were t
 
 # Wins
 
+We found that the initial implementation of our API to get all of the Superheroes was well executed. Using axios we ensured that the API could be accessed properly and allowed us to log any superheroes that were missing attributes or images. 
+
+```
+const [superheroes, setSuperheroes] = React.useState('')
+
+  React.useEffect(() => {
+    const getData = async () => {
+      try {
+        const { data } = await axios.get('https://akabab.github.io/superhero-api/api/all.json')
+        setSuperheroes(data)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    getData()
+  }, [])
+```
 
 
 # Future Features
+
+With more time, these are the additional features I would like to add:
+
+- Add different game modes 
+  - First to 10, First to 20
+- Spent more time refactoring our code into more components
+- Make the game mobile responsive
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
