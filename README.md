@@ -5,6 +5,11 @@
 
 For our second project at GA ‘Reactathon’, we were expected to build a React.js app using a 3rd party API, which was to be pair coded in 48 hours.
 
+# Members 
+
+- Edwyn Abi-Acar - https://github.com/Edwyn26
+- Hugo Kinahan - https://github.com/hugokinahan
+
 # Deployment
 
 - Please follow the link to play our game: https://superhero-showdown-hugokinahan.netlify.app/
