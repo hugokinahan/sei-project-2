@@ -25,13 +25,17 @@ Our end product was Superhero Showdown, a Top Trumps like game where users are p
 
 # Screenshots
 
-![](Screenshot 2021-02-08 at 11.34.41)
+Small Screen Homepage
+![Small Screen Homepage](small-home.png)
 
-![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
+Large Screen Homepage
+![Large Screen Homepage](large-home.png)
 
-![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
+Game Screen
+![Game Screen](one-round.png)
 
-![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
+Winning Screen
+![Winning Screen](winning-page.png)
 
 # Frameworks used
 
