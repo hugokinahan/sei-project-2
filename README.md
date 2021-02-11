@@ -31,15 +31,19 @@ Our end product was Superhero Showdown, a Top Trumps like game where users are p
 # Screenshots
 
 Small Screen Homepage
+
 ![Small Screen Homepage](small-home.png)
 
 Large Screen Homepage
+
 ![Large Screen Homepage](large-home.png)
 
 Game Screen
+
 ![Game Screen](one-round.png)
 
 Winning Screen
+
 ![Winning Screen](winning-page.png)
 
 # Frameworks used
