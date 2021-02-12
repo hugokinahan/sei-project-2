@@ -14,19 +14,67 @@ For our second project at GA ‘Reactathon’, we were expected to build a React
 
 - Please follow the link to play our game: https://superhero-showdown-hugokinahan.netlify.app/
 
+- Repository link: https://github.com/hugokinahan/sei-project-2
+
 # Motivation
 
 As a pair we wanted to implement our chosen third party API creatively. After deciding on our Superhero API we chose to create a version of the well known game Top Trumps.
 
 Our end product was Superhero Showdown, a Top Trumps like game where users are pitted against the computer after each are given a random Superhero from the Superhero-API. The user must then choose a superhero attribute that they think will outscore the reciprocal attribute on the computer's superhero.
 
-# Features
+# Frameworks used
 
-- Start Page
-- Game Page with Superhero Attributes listed
-- Score board 
-- Next round button to randomly select two new superheroes
-- Restart game button which will take the user back to the start game page
+- React.js
+- axios (for API requests)
+- Insomnia
+- HTML5
+- CSS 3
+- JavaScript (ES6)
+- Git/Github
+- Babel
+- Google Fonts
+- SASS
+
+# Process
+
+With only 48 hours, we knew that we had to think methodically about the most import aspects of the game to ensure a finished product to be proud of. We made plans on what we thought was achievable and listed some features that we would like to implement if we had time. 
+
+We spent a short time planning and once we had a clear idea we jumped straight into coding. Our first task was to ensure that we could get the Superhero API to appear on our page. This was a smooth process and once test successfully we worked on choosing two random superheros to appear on screen, one as the player and one as the computer. 
+
+```
+  const [randomPlayerSuper, setRandomPlayerSuper] = React.useState(null)
+  const [randomComputerPlayer, setRandomComputerSuper] = React.useState(null)
+
+  const pickSupers = () => {
+    setRandomPlayerSuper(superheroes[Math.floor(Math.random() * superheroes.length)])
+    setRandomComputerSuper(superheroes[Math.floor(Math.random() * superheroes.length)])
+    setChoice('')
+  }
+```
+
+After implementing these in the JSX with their 'powerstats' we then had a visual idea of how our application would look. We then had to ensure that the stats of the CPU superhero were hidden until the choice of the player was made on a specific attribute. To do this we used a ternery to show nothing if no choice had been made and to show the stats if a choice had been made by the player. 
+
+```
+                <div className="computer-superhero">
+                  <h2>{ randomComputerPlayer.name }</h2>
+                  <img src={randomComputerPlayer.images.sm} alt={randomComputerPlayer.name} />
+                  <button value="intelligence">Intelligence: {choice ? `${randomComputerPlayer.powerstats.intelligence}` : '' }</button>
+                  <button value="strength">Strength: {choice ? `${randomComputerPlayer.powerstats.strength}` : '' }</button>
+                  <button value="speed">Speed: {choice ? `${randomComputerPlayer.powerstats.speed}` : '' }</button>
+                  <button value="durability">Durability: {choice ? `${randomComputerPlayer.powerstats.durability}` : '' }</button>
+                  <button value="power">Power: {choice ? `${randomComputerPlayer.powerstats.power}` : '' }</button>
+                  <button value="combat">Combat: {choice ? `${randomComputerPlayer.powerstats.combat}` : '' }</button>
+                </div> 
+```
+
+After this was added successfully we added a 'next round' button which onClick would pick two new superheroes and would check whether the player or computer had reached the winning score of five. If one of these scores was met, a winning or losing message would appear with th eoption to restart the game. This code can be seen below. 
+
+```
+              <button onClick={pickSupers} disabled={!choice || playerWinningScore || computerWinningScore} className="next-button">Next Round</button>
+              <button onClick={reloadPage} className="restart-button">Restart Game</button>
+```
+
+Once these were finalised we spent our last half day styling the game into a superhero themed application and ensuring that our game was responsive to various screen sizes. 
 
 # Screenshots
 
@@ -45,19 +93,6 @@ Game Screen
 Winning Screen
 
 ![Winning Screen](winning-page.png)
-
-# Frameworks used
-
-- React.js
-- axios (for API requests)
-- Insomnia
-- HTML5
-- CSS 3
-- JavaScript (ES6)
-- Git/Github
-- Babel
-- Google Fonts
-- SASS
 
 # Challenges
 
@@ -124,6 +159,11 @@ const [superheroes, setSuperheroes] = React.useState('')
   }, [])
 ```
 
+# Key Learnings
+
+This was my first pair project, and overall the dynamic worked well producing an application we were proud of. 
+
+One aspect that I would improve for the next group or pair project is the delegation of different tasks. In my opinion we spent too much time screen-sharing on the same tasks when these could have easily been delegated, allowing us more time to add more features to our finished application. 
 
 # Future Features
 
